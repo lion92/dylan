@@ -370,6 +370,280 @@
             margin-bottom: 20px;
         }
 
+        /* CV Section */
+        .cv-section {
+            padding: 100px 50px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.03), rgba(118, 75, 162, 0.03));
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            padding: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1), transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cv-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cv-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .cv-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cv-header-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cv-header-info .cv-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .cv-contact-item i {
+            color: var(--accent);
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cv-main {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .cv-section-block {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .cv-section-block:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+        }
+
+        .cv-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-section-title::before {
+            content: '';
+            width: 4px;
+            height: 25px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .cv-experience-item,
+        .cv-education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(102, 126, 234, 0.3);
+            position: relative;
+        }
+
+        .cv-experience-item::before,
+        .cv-education-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .cv-experience-item h4,
+        .cv-education-item h4 {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .cv-experience-item .company,
+        .cv-education-item .school {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cv-experience-item .date,
+        .cv-education-item .date {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .cv-experience-item ul,
+        .cv-education-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .cv-experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cv-experience-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .cv-experience-item ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .cv-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .cv-skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cv-skill-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .cv-skill-name {
+            font-size: 0.95rem;
+            color: var(--light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cv-skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .cv-skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            animation: fillBar 2s ease-out forwards;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .cv-languages {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cv-language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .cv-language-item:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateX(5px);
+        }
+
+        .cv-download-btn {
+            margin-top: 50px;
+            text-align: center;
+        }
+
         /* Skills Section */
         .skills {
             padding: 100px 50px;
@@ -554,50 +828,6 @@
             margin: 0 auto;
         }
 
-        .contact-form {
-            display: grid;
-            gap: 30px;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--light);
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-        }
-
-        .form-group label {
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            background: var(--dark);
-            padding: 0 10px;
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .form-submit {
-            justify-self: center;
-        }
-
         /* Footer */
         footer {
             padding: 50px;
@@ -673,6 +903,23 @@
                 grid-template-columns: 1fr;
             }
 
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-container {
+                padding: 30px;
+            }
+
+            .cv-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cv-photo {
+                margin: 0 auto;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -704,6 +951,7 @@
         <ul class="nav-links">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#about">À Propos</a></li>
+            <li><a href="#cv">CV</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#projects">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -721,7 +969,7 @@
             passionné par l'analyse financière et les mathématiques appliquées à la gestion d'entreprise.
         </p>
         <div class="cta-buttons">
-            <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+            <a href="#cv" class="btn btn-primary">Voir mon CV</a>
             <a href="#contact" class="btn btn-secondary">Me contacter</a>
         </div>
     </div>
@@ -755,6 +1003,195 @@
                 Passionné par les chiffres et l'analyse, je suis toujours à la recherche de nouvelles
                 opportunités pour approfondir mes connaissances en finance et comptabilité.
             </p>
+        </div>
+    </div>
+</section>
+
+<!-- CV Section -->
+<section class="cv-section" id="cv">
+    <h2 class="section-title">Mon Curriculum Vitae</h2>
+
+    <div class="cv-container">
+        <div class="cv-header">
+            <div class="cv-photo">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQHKpzSy9UzDwA/profile-displayphoto-shrink_200_200/B56ZUqawO3GUAY-/0/1740173413132?e=1759363200&v=beta&t=3YrCdExgDV7Ts-LEJs-2_FDnBrDduPyCsgvQuVb4--M" alt="Jeff Dylan Ramanantsoa">
+            </div>
+            <div class="cv-header-info">
+                <h2>Jeff Dylan Ramanantsoa</h2>
+                <p class="cv-title">Assistant Comptabilité & Analyste Financier</p>
+                <div class="cv-contact">
+                    <div class="cv-contact-item">
+                        <span>📍</span>
+                        <span>Île-de-France, France</span>
+                    </div>
+                    <div class="cv-contact-item">
+                        <span>🎓</span>
+                        <span>IUT de Sceaux</span>
+                    </div>
+                    <div class="cv-contact-item">
+                        <span>💼</span>
+                        <span>Groupement Mousquetaires</span>
+                    </div>
+                    <div class="cv-contact-item">
+                        <span>🔗</span>
+                        <a href="https://www.linkedin.com/in/jeff-dylan-ramanantsoa-0a807933a/" target="_blank" style="color: var(--text); text-decoration: none;">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-grid">
+            <div class="cv-main">
+                <!-- Expérience Professionnelle -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Expérience Professionnelle</h3>
+
+                    <div class="cv-experience-item">
+                        <h4>Assistant Comptabilité Fournisseurs</h4>
+                        <div class="company">Groupement Mousquetaires - Évry-Courcouronnes</div>
+                        <div class="date">Mai 2025 - Juillet 2025 (3 mois)</div>
+                        <ul>
+                            <li>Gestion et analyse des comptes fournisseurs</li>
+                            <li>Traitement et vérification des factures</li>
+                            <li>Rapprochements bancaires et suivi des paiements</li>
+                            <li>Élaboration de reporting financier</li>
+                            <li>Utilisation avancée de SAP et Excel pour l'analyse</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-experience-item">
+                        <h4>Assistant d'Architecte</h4>
+                        <div class="company">BEPA Ankerana - Antananarivo, Madagascar</div>
+                        <div class="date">Février 2022 - Avril 2022 (3 mois)</div>
+                        <ul>
+                            <li>Assistance sur des projets architecturaux complexes</li>
+                            <li>Gestion de projet et coordination d'équipes</li>
+                            <li>Communication avec les clients et partenaires</li>
+                            <li>Utilisation d'AutoCAD pour les plans techniques</li>
+                            <li>Suivi des phases de construction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formation -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Formation</h3>
+
+                    <div class="cv-education-item">
+                        <h4>DUT Gestion des Entreprises et des Administrations (GEA)</h4>
+                        <div class="school">IUT de Sceaux - Université Paris-Saclay</div>
+                        <div class="date">2024 - 2027 (en cours)</div>
+                        <p>
+                            Spécialisation en comptabilité, finance d'entreprise, contrôle de gestion,
+                            stratégie d'entreprise et management. Acquisition de compétences en analyse
+                            financière, droit des affaires et systèmes d'information.
+                        </p>
+                    </div>
+
+                    <div class="cv-education-item">
+                        <h4>Baccalauréat Sciences Économiques et Sociales</h4>
+                        <div class="school">Alliance Française - Antananarivo, Madagascar</div>
+                        <div class="date">2021 - 2024</div>
+                        <p>
+                            <strong>Mention Bien</strong> - Spécialités : Mathématiques et Sciences Économiques et Sociales.
+                            Développement de compétences analytiques et méthodologiques appliquées
+                            à l'économie et aux sciences sociales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-sidebar">
+                <!-- Compétences Techniques -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Compétences</h3>
+                    <div class="cv-skills-list">
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-name">
+                                <span>Comptabilité</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="cv-skill-bar">
+                                <div class="cv-skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-name">
+                                <span>Analyse Financière</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="cv-skill-bar">
+                                <div class="cv-skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-name">
+                                <span>Excel Avancé</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="cv-skill-bar">
+                                <div class="cv-skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-name">
+                                <span>SAP</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="cv-skill-bar">
+                                <div class="cv-skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="cv-skill-item">
+                            <div class="cv-skill-name">
+                                <span>Gestion de Projet</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="cv-skill-bar">
+                                <div class="cv-skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Langues -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Langues</h3>
+                    <div class="cv-languages">
+                        <div class="cv-language-item">
+                            <span>🇫🇷 Français</span>
+                            <span style="color: var(--accent);">Natif</span>
+                        </div>
+                        <div class="cv-language-item">
+                            <span>🇲🇬 Malgache</span>
+                            <span style="color: var(--accent);">Natif</span>
+                        </div>
+                        <div class="cv-language-item">
+                            <span>🇬🇧 Anglais</span>
+                            <span style="color: var(--accent);">B2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centres d'intérêt -->
+                <div class="cv-section-block">
+                    <h3 class="cv-section-title">Intérêts</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span class="tech-tag">Finance</span>
+                        <span class="tech-tag">Économie</span>
+                        <span class="tech-tag">Technologies</span>
+                        <span class="tech-tag">Mathématiques</span>
+                        <span class="tech-tag">Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-download-btn">
+            <a href="#" class="btn btn-primary" onclick="window.print(); return false;">
+                <span style="margin-right: 10px;">📄</span>
+                Télécharger mon CV en PDF
+            </a>
         </div>
     </div>
 </section>

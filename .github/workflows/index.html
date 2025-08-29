@@ -943,40 +943,59 @@
 <!-- Contact Section -->
 <section class="contact" id="contact">
     <h2 class="section-title">Contactez-moi</h2>
-    <div class="contact-container">
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required>
+    <div class="contact-container" style="text-align: center;">
+        <p style="font-size: 1.3rem; margin-bottom: 40px; color: var(--text);">
+            Je suis toujours ouvert aux nouvelles opportunités et collaborations.<br>
+            N'hésitez pas à me contacter via LinkedIn !
+        </p>
+        <a href="https://www.linkedin.com/in/jeff-dylan-ramanantsoa-0a807933a/"
+           target="_blank"
+           class="btn btn-primary"
+           style="font-size: 1.2rem; padding: 20px 50px;">
+            <span style="margin-right: 10px;">in</span>
+            Me contacter sur LinkedIn →
+        </a>
+        <div style="margin-top: 60px; padding: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 20px; border: 1px solid rgba(102, 126, 234, 0.2);">
+            <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 20px;">
+                Disponible pour
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div style="padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 10px;">
+                    <span style="font-size: 2rem;">💼</span>
+                    <p style="margin-top: 10px;">Stages en Comptabilité</p>
+                </div>
+                <div style="padding: 20px; background: rgba(118, 75, 162, 0.1); border-radius: 10px;">
+                    <span style="font-size: 2rem;">📊</span>
+                    <p style="margin-top: 10px;">Analyse Financière</p>
+                </div>
+                <div style="padding: 20px; background: rgba(0, 255, 136, 0.1); border-radius: 10px;">
+                    <span style="font-size: 2rem;">🎓</span>
+                    <p style="margin-top: 10px;">Alternance GEA</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Sujet</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-submit">
-                <button type="submit" class="btn btn-primary">Envoyer le message</button>
-            </div>
-        </form>
+        </div>
     </div>
 </section>
 
 <!-- Footer -->
 <footer>
     <div class="social-links">
-        <a href="https://www.linkedin.com/in/jeff-dylan-ramanantsoa-0a807933a/" class="social-link" target="_blank">in</a>
-        <a href="#" class="social-link">📧</a>
-        <a href="#" class="social-link">🐙</a>
-        <a href="#" class="social-link">🐦</a>
+        <a href="https://www.linkedin.com/in/jeff-dylan-ramanantsoa-0a807933a/" class="social-link" target="_blank" title="LinkedIn">
+            <span style="font-weight: bold;">in</span>
+        </a>
+        <a href="mailto:contact@jeffdylan.com" class="social-link" title="Email">
+            <span>📧</span>
+        </a>
+        <a href="#" class="social-link" title="GitHub">
+            <span>💻</span>
+        </a>
     </div>
-    <p>&copy; 2025 Jeff Dylan Ramanantsoa. Tous droits réservés.</p>
+    <p style="margin-top: 30px; color: var(--text);">
+        Jeff Dylan Ramanantsoa | Assistant Comptabilité & Analyste Financier
+    </p>
+    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">
+        &copy; 2025 Tous droits réservés | Fait avec passion 💜
+    </p>
 </footer>
 
 <script>
@@ -1039,26 +1058,6 @@
                 });
             }
         });
-    });
-
-    // Form Submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Animation de succès
-        const btn = this.querySelector('.btn-primary');
-        const originalText = btn.textContent;
-        btn.textContent = '✓ Message envoyé!';
-        btn.style.background = 'linear-gradient(135deg, #00ff88, #00cc6a)';
-
-        // Reset form
-        this.reset();
-
-        // Restore button after 3 seconds
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-        }, 3000);
     });
 
     // Intersection Observer for animations

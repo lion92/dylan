@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jeff Dylan Ramanantsoa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            margin: 10mm;
+            size: A4;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.3;
+            color: #333;
+            background: white;
+            font-size: 10.5pt;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 15mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            height: 267mm;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .cv-header {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1a365d;
+            margin-bottom: 18px;
+        }
+
+        .cv-name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-title-main {
+            font-size: 14pt;
+            color: #b8860b;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cv-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 9.5pt;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        /* Two Column Layout */
+        .cv-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin-top: 18px;
+            flex: 1;
+        }
+
+        /* Left Column */
+        .cv-left {
+            padding-right: 20px;
+        }
+
+        /* Right Column */
+        .cv-right {
+            border-left: 2px solid #1a365d;
+            padding-left: 20px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 12.5pt;
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #b8860b;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* Experience Items */
+        .experience-item {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .job-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            font-size: 10.5pt;
+            color: #b8860b;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .date {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+            font-size: 9.5pt;
+            line-height: 1.3;
+        }
+
+        .responsibilities li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 12px;
+        }
+
+        .degree {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .school {
+            font-size: 9.5pt;
+            color: #b8860b;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        /* Skills */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-item {
+            margin-bottom: 6px;
+            font-size: 9.5pt;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-level {
+            color: #b8860b;
+            font-size: 9pt;
+        }
+
+        /* Languages */
+        .languages-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 9.5pt;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .language-level {
+            color: #b8860b;
+            font-weight: 600;
+        }
+
+        /* Interests */
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .interest-tag {
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 9pt;
+            color: #333;
+            border: 1px solid #b8860b;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 15px;">
+                <div style="flex: 1; text-align: right;">
+                    <h1 class="cv-name">Jeff Dylan Ramanantsoa</h1>
+                    <h2 class="cv-title-main">Contrôleur de Gestion & Analyste Financier</h2>
+                </div>
+                <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #b8860b; flex-shrink: 0;">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQHKpzSy9UzDwA/profile-displayphoto-shrink_200_200/B56ZUqawO3GUAY-/0/1740173413132?e=1759363200&v=beta&t=3YrCdExgDV7Ts-LEJs-2_FDnBrDduPyCsgvQuVb4--M" alt="Jeff Dylan Ramanantsoa" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 1;"></div>
+            </div>
+            <div class="cv-contact-info">
+                <span>📍 Île-de-France, France</span>
+                <span>💼 linkedin.com/in/jeff-dylan-ramanantsoa-0a807933a</span>
+                <span>🎓 Étudiant DUT GEA - IUT de Sceaux</span>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="cv-content">
+            <!-- Left Column -->
+            <div class="cv-left">
+                <!-- Experience -->
+                <div class="section">
+                    <h3 class="section-title">Expérience Professionnelle</h3>
+
+                    <div class="experience-item">
+                        <div class="job-title">Apprenti Contrôleur de Gestion</div>
+                        <div class="company">L'Îlot - Contrat d'apprentissage</div>
+                        <div class="date">Septembre 2025 - En ce moment | Pantin, Île-de-France</div>
+                        <ul class="responsibilities">
+                            <li>Analyse financière et contrôle de gestion opérationnel</li>
+                            <li>Élaboration et suivi de tableaux de bord financiers</li>
+                            <li>Suivi des budgets et analyse des écarts budgétaires</li>
+                            <li>Reporting de performance et analyses prédictives</li>
+                            <li>Optimisation des processus financiers</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Assistant Comptabilité Fournisseurs</div>
+                        <div class="company">Groupement Mousquetaires</div>
+                        <div class="date">Mai 2025 - Juillet 2025 (3 mois) | Évry-Courcouronnes</div>
+                        <ul class="responsibilities">
+                            <li>Gestion et analyse des comptes fournisseurs</li>
+                            <li>Traitement et vérification des factures</li>
+                            <li>Rapprochements bancaires et suivi des paiements</li>
+                            <li>Élaboration de reporting financier mensuel</li>
+                            <li>Utilisation avancée de SAP et Excel pour l'analyse</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Assistant d'Architecte</div>
+                        <div class="company">BEPA Ankerana</div>
+                        <div class="date">Fév. 2022 - Avr. 2022 | Madagascar</div>
+                        <ul class="responsibilities">
+                            <li>Assistance sur projets architecturaux complexes</li>
+                            <li>Coordination d'équipes et communication clients</li>
+                            <li>Utilisation d'AutoCAD pour plans techniques</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formation -->
+                <div class="section">
+                    <h3 class="section-title">Formation</h3>
+
+                    <div class="education-item">
+                        <div class="degree">DUT Gestion des Entreprises et des Administrations (GEA)</div>
+                        <div class="school">IUT de Sceaux - Université Paris-Saclay</div>
+                        <div class="date">2024 - 2027 (en cours)</div>
+                        <p style="font-size: 9pt; margin-top: 4px; line-height: 1.3;">
+                            Spécialisation en comptabilité, finance d'entreprise, contrôle de gestion,
+                            stratégie d'entreprise et management.
+                        </p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">Baccalauréat Sciences Économiques et Sociales</div>
+                        <div class="school">Alliance Française - Antananarivo, Madagascar</div>
+                        <div class="date">2021 - 2024</div>
+                        <p style="font-size: 9pt; margin-top: 4px; line-height: 1.3;">
+                            <strong>Mention Bien</strong> - Spécialités : Mathématiques et Sciences Économiques et Sociales.
+                            Compétences analytiques appliquées à l'économie.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="cv-right">
+                <!-- Compétences -->
+                <div class="section">
+                    <h3 class="section-title">Compétences</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">Contrôle de Gestion</div>
+                            <div class="skill-level">Expert</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Comptabilité</div>
+                            <div class="skill-level">Avancé</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Analyse Financière</div>
+                            <div class="skill-level">Avancé</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Excel Avancé</div>
+                            <div class="skill-level">Expert</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">SAP</div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Gestion de Projet</div>
+                            <div class="skill-level">Avancé</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">AutoCAD</div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Langues -->
+                <div class="section">
+                    <h3 class="section-title">Langues</h3>
+                    <ul class="languages-list">
+                        <li class="language-item">
+                            <span class="language-name">Français</span>
+                            <span class="language-level">Natif</span>
+                        </li>
+                        <li class="language-item">
+                            <span class="language-name">Malgache</span>
+                            <span class="language-level">Natif</span>
+                        </li>
+                        <li class="language-item">
+                            <span class="language-name">Anglais</span>
+                            <span class="language-level">B2</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Centres d'intérêt -->
+                <div class="section">
+                    <h3 class="section-title">Centres d'intérêt</h3>
+                    <div class="interests">
+                        <span class="interest-tag">Finance</span>
+                        <span class="interest-tag">Économie</span>
+                        <span class="interest-tag">Technologies</span>
+                        <span class="interest-tag">Mathématiques</span>
+                        <span class="interest-tag">Architecture</span>
+                        <span class="interest-tag">Analyse de données</span>
+                    </div>
+                </div>
+
+                <!-- Atouts -->
+                <div class="section">
+                    <h3 class="section-title">Points Forts</h3>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">Rigueur analytique</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Sens du détail</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Capacité d'adaptation</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Travail en équipe</div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">Communication</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-print for PDF generation
+        setTimeout(() => {
+            window.print();
+        }, 1000);
+    </script>
+</body>
+</html>
